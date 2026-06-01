@@ -1,4 +1,3 @@
-# Commanc to run: -- IGNORE ---
 from pathlib import Path
 import json
 import pickle
