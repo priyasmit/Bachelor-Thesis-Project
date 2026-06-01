@@ -1,4 +1,4 @@
-#run example: python generate_cg.py
+
 import os
 import subprocess
 
