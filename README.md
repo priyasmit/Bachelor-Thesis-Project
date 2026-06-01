@@ -113,6 +113,7 @@ project/
 ├── dataset_pyg.py
 ├── models_pyg.py
 ├── train_eval_pyg.py
+├── view_explanations.py
 │
 ├── apks/
 ├── decompiled/
@@ -151,7 +152,7 @@ Explainability Evaluation
 Download Android applications from AndroZoo.
 
 ```bash
-python download_androzoo_1000.py
+python3 download_androzoo_1000.py --csv apk.csv --apikey "YOUR_ANDROZOO_API_KEY" --balanced --n 1000 --sleep 1.0
 ```
 
 Output:
@@ -386,8 +387,42 @@ Reported metrics include:
 
 ---
 
+## Step 9: Plotting Generated Explanations
+
+GraphSAGE:
+
+```bash
+python view_explanations.py --exp_dir runs_pyg/sage_seed123/explanations --topk 10
+```
+
+GCN:
+
+```bash
+python view_explanations.py --exp_dir runs_pyg/gcn_seed123/explanations --topk 10
+```
+
+Optional parameters:
+
+```text
+--topk
+--file
+```
+
+Generated explanations are stored in:
+
+```text
+plots/
+├── confusion_matrix_gcn.png
+├── confusion_matrix_graphsage.png
+├── results_summary.csv
+├── test_metric_bars.png
+├── unfaithfulness_boxplot.png
+└── unfaithfulness_hist.png
+```
+---
+
 # Reproducibility Notes
 
 The preprocessing and training stages were intentionally separated into two environments because of dependency conflicts between the Android analysis tooling (Androguard/Node2Vec) and the more recent PyTorch Geometric ecosystem used for model training and explainability.
 
-To reproduce the thesis results, execute the pipeline sequentially from Step 1 through Step 8, switching environments after Node2Vec embedding generation.
+To reproduce the thesis results, execute the pipeline sequentially from Step 1 through Step 9, switching environments after Node2Vec embedding generation.
