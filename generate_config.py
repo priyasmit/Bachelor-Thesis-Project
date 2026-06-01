@@ -1,4 +1,4 @@
-#run example: python generate_config.py
+
 import json
 from pathlib import Path
 import pandas as pd
