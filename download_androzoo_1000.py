@@ -1,4 +1,3 @@
-# run example: python3 download_androzoo_1000.py --csv apk.csv --apikey "your API key" --balanced --n 1000 --sleep 1.0
 import argparse
 import csv
 import os
