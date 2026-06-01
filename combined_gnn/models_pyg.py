@@ -1,4 +1,3 @@
-# Commanc to run: -- IGNORE ---
 import torch
 import torch.nn.functional as F
 from torch_geometric.nn import GCNConv, SAGEConv, global_mean_pool
