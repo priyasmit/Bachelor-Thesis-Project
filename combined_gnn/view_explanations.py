@@ -1,8 +1,3 @@
-
-# run example:
-# python view_explanations.py --exp_dir runs_pyg/sage_seed123/explanations --topk 10
-# python view_explanations.py --exp_dir runs_pyg/gcn_seed123/explanations --topk 10
-
 import argparse
 import json
 import pickle
