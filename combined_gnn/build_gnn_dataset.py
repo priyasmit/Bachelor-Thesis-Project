@@ -1,16 +1,3 @@
-# run example: python build_gnn_dataset.py --config path/to/config.json --out_dir path/to/gnn_preprocessed --dim 32
-
-# Inputs:
-# - config.json: list of graphs with graph_path, embedding_path, label
-# - graph_path: .gml call graph
-# - embedding_path: node2vec word2vec-style .vec text file
-
-# Outputs (in out_dir):
-# - <pkg>_graph.pkl      : pickled NetworkX graph
-# - <pkg>_features.npy   : [num_nodes, dim] float32
-# - <pkg>_label.json     : {"label": 0/1}
-#
-
 from pathlib import Path
 import json
 import pickle
